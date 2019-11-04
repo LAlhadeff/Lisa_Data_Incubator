@@ -18,8 +18,8 @@ for line2 in f2:
 # importing the required module 
 import matplotlib.pyplot as plt 
 
-#size = len(likes)
-size = 10
+size = len(likes)
+#size = 10
 # # x axis values 
 x = likes[0:size] 
 #x = likes[0:3000]
@@ -34,10 +34,8 @@ def best_fit(X, Y):
     n = len(X) # or len(Y)
     numer = sum([xi*yi for xi,yi in zip(X, Y)]) - n * xbar * ybar
     denum = sum([xi**2 for xi in X]) - n * xbar**2
-    b = numer / denum
-    print(b)
+    b = numer / denum   
     a = ybar - b * xbar
-    print(a)
     print('best fit line:\ny = {:.4f} + {:.4}x'.format(a, b))
     return(a, b)
 
@@ -60,7 +58,7 @@ plt.title('Correlation between number of likes and people talking about')
 
 
 covariance = cov(x, y)
-print("Covariance data:")
+print("\nCovariance data:")
 print(covariance)
 # function to show the plot 
 plt.show() 
@@ -71,7 +69,7 @@ from scipy.stats import spearmanr
 
 # calculate Pearson's correlation
 corr, _ = pearsonr(x, y)
-print('Pearsons correlation: %.3f' % corr)
+print('\nPearsons correlation: %.3f' % corr)
 
 # calculate spearman's correlation
 corr, _ = spearmanr(x, y)
@@ -94,7 +92,7 @@ b = y
 
 ## Investigating t and P values
 t, p = stats.ttest_ind(x,y)
-print("t-value is:  %.5f" % t)
+print("\nt-value is:  %.5f" % t)
 print("p-value is:  %.10f" % p)
 
 """
